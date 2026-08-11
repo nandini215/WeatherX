@@ -2,40 +2,45 @@
 
 A modern, responsive weather forecast web application built with React and Vite. Search any city or use your current location to see live current conditions, an hourly forecast, and a 7-day outlook, all powered by real weather data — no mock or hard-coded values.
 
+## 🌐 Live Demo
+
+**Try WeatherX:**
+https://weather-555qg0sd5-nandini215s-projects.vercel.app/
+
 ## Features
 
-- City search with Enter-to-search and a search button
-- "Use My Location" via the browser Geolocation API, with graceful handling if permission is denied
-- Current conditions: temperature, feels-like, condition, humidity, wind, precipitation, UV index
-- 7-day forecast with daily high/low, condition icon, and precipitation chance
-- 24-hour hourly forecast, horizontally scrollable
-- Weather details dashboard: feels like, humidity, wind speed & direction, pressure, visibility, UV index, sunrise, sunset
-- Celsius / Fahrenheit toggle, preference saved in `localStorage`
-- Recent searches (last 5, deduplicated, clearable), saved in `localStorage`
-- Weather-reactive background and ambient effects (rain / snow / stars) driven by real conditions
-- Dark mode toggle
-- Fully responsive layout with a mobile navigation menu
-- Accessible controls: labeled inputs/buttons, keyboard navigation, visible focus states
-- User-friendly error handling for invalid cities, network failures, and denied location access
+* City search with Enter-to-search and a search button
+* "Use My Location" via the browser Geolocation API, with graceful handling if permission is denied
+* Current conditions: temperature, feels-like, condition, humidity, wind, precipitation, UV index
+* 7-day forecast with daily high/low, condition icon, and precipitation chance
+* 24-hour hourly forecast, horizontally scrollable
+* Weather details dashboard: feels like, humidity, wind speed & direction, pressure, visibility, UV index, sunrise, sunset
+* Celsius / Fahrenheit toggle, preference saved in `localStorage`
+* Recent searches (last 5, deduplicated, clearable), saved in `localStorage`
+* Weather-reactive background and ambient effects (rain / snow / stars) driven by real conditions
+* Dark mode toggle
+* Fully responsive layout with a mobile navigation menu
+* Accessible controls: labeled inputs/buttons, keyboard navigation, visible focus states
+* User-friendly error handling for invalid cities, network failures, and denied location access
 
 ## Technologies Used
 
-- [React 19](https://react.dev/)
-- [Vite 7](https://vitejs.dev/)
-- [Tailwind CSS 4](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/) for animation
-- [lucide-react](https://lucide.dev/) and [react-icons](https://react-icons.github.io/react-icons/) for icons
-- Native `fetch` for API calls
+* [React 19](https://react.dev/)
+* [Vite 7](https://vitejs.dev/)
+* [Tailwind CSS 4](https://tailwindcss.com/)
+* [Framer Motion](https://www.framer.com/motion/) for animation
+* [lucide-react](https://lucide.dev/) and [react-icons](https://react-icons.github.io/react-icons/) for icons
+* Native `fetch` for API calls
 
 ## Project Structure
 
-```
+```text
 WeatherX/
 ├── public/
 │   └── vite.svg
 ├── src/
-│   ├── assets/              # Static assets and effect stylesheets
-│   ├── components/          # One folder per UI component
+│   ├── assets/
+│   ├── components/
 │   │   ├── FAQ/
 │   │   ├── Features/
 │   │   ├── Footer/
@@ -52,9 +57,9 @@ WeatherX/
 │   │   ├── Testimonials/
 │   │   ├── WeatherDetails/
 │   │   └── WeatherIcon/
-│   ├── hooks/                # useWeather, useLocalStorage
-│   ├── services/             # weatherService.js — all API calls
-│   ├── utils/                # weatherCodes.js, unitConversion.js
+│   ├── hooks/
+│   ├── services/
+│   ├── utils/
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
@@ -63,8 +68,7 @@ WeatherX/
 ├── eslint.config.js
 ├── index.html
 ├── package.json
-├── vite.config.js
-└── README.md
+└── vite.config.js
 ```
 
 ## Installation
@@ -85,31 +89,47 @@ npm run dev
 
 ```bash
 npm run build
-npm run preview   # preview the production build locally
+npm run preview
 ```
 
 ## Environment Variables
 
-WeatherX does not require any API keys or secrets — every request goes to free, key-less public APIs. A `.env.example` file is still included as a placeholder in case you extend the project with a service that needs credentials later. If you add one, define it as `VITE_YOUR_VARIABLE_NAME=...` and read it in code via `import.meta.env.VITE_YOUR_VARIABLE_NAME`. Real `.env` files are already excluded via `.gitignore`.
+WeatherX does not require any API keys or secrets — every request goes to free, key-less public APIs. A `.env.example` file is included as a placeholder in case the project is extended with a service that requires credentials.
+
+If you add an environment variable later, define it as:
+
+```env
+VITE_YOUR_VARIABLE_NAME=...
+```
+
+and access it using:
+
+```javascript
+import.meta.env.VITE_YOUR_VARIABLE_NAME
+```
+
+Real `.env` files are excluded via `.gitignore`.
 
 ## API Information
 
-- **[Open-Meteo](https://open-meteo.com/)** — free geocoding and forecast API, no key required. Used for city lookup, current conditions, hourly forecast, and 7-day daily forecast.
-- **[BigDataCloud reverse geocoding](https://www.bigdatacloud.com/geocoding-apis/free-reverse-geocoding-to-city-api)** — free, key-less reverse geocoding, used only to turn your coordinates into a place name for "Use My Location".
+* **Open-Meteo** — free geocoding and forecast API, with no API key required. Used for city lookup, current conditions, hourly forecast, and 7-day daily forecast.
+* **BigDataCloud Reverse Geocoding** — free, key-less reverse geocoding used to convert coordinates into a place name for "Use My Location".
 
 ## Screenshots
 
-_Add screenshots here before publishing — e.g. desktop dashboard, mobile view, 7-day forecast, hourly forecast, dark mode._
+Add screenshots here before publishing, including:
+
+* Desktop dashboard
+* Mobile responsive view
+* 7-day forecast
+* Hourly forecast
+* Dark mode
 
 ## Future Improvements
 
-- Air quality index
-- Severe weather alerts
-- Multi-day trend charts
-- Favorite/pinned cities separate from recent searches
-- PWA / offline support
-- Automated tests (unit + component)
-
-## Author
-
-Built by [Your Name]. Feel free to connect on [GitHub](https://github.com/<your-username>) or [LinkedIn](https://linkedin.com/in/<your-profile>).
+* Air quality index
+* Severe weather alerts
+* Multi-day trend charts
+* Favorite/pinned cities separate from recent searches
+* PWA / offline support
+* Automated unit and component tests
