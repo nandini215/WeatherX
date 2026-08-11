@@ -1,0 +1,57 @@
+@keyframes rainFall {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(120vh);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes snowDrift {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    100% {
+      transform: translateY(120vh) translateX(20px);
+    }
+  }
+  
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.9;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+  
+  .rain-drop {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: #60a5fa; /* Tailwind blue-400 */
+    animation: rainFall 0.7s linear infinite;
+    opacity: 0.6;
+  }
+  
+  .snow-flake {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: snowDrift 6s linear infinite;
+  }
+  
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+  
